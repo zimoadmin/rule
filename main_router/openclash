@@ -115,7 +115,7 @@ config dns_servers
 	option interface 'Disable'
 	option node_resolve '0'
 	option specific_group 'Disable'
-	option enabled '1'
+	option enabled '0'
 
 config dns_servers
 	option type 'udp'
@@ -125,7 +125,7 @@ config dns_servers
 	option interface 'Disable'
 	option node_resolve '0'
 	option specific_group 'Disable'
-	option enabled '1'
+	option enabled '0'
 	
 config dns_servers
 	option type 'udp'
