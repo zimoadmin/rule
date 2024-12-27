@@ -84,8 +84,6 @@ config openclash 'config'
 	option enable_meta_sniffer_pure_ip '1'
 	option enable_meta_sniffer_custom '0'
 	option enable_custom_dns '1'
-	option enable_respect_rules '1'
-	option append_wan_dns '1'
 	option custom_fallback_filter '1'
 	option enable_tcp_concurrent '1'
 	option enable_unified_delay '1'
@@ -94,10 +92,11 @@ config openclash 'config'
 	option config_path '/etc/openclash/config/自用规则.yaml'
 	option tolerance '50'
 	option urltest_interval_mod '180'
+	option enable_respect_rules '0'
+	option append_wan_dns '0'
 	option redirect_dns '1'
 	option dnsmasq_cachesize '0'
 	option cachesize_dns '1'
-
 
 config dns_servers
 	option group 'nameserver'
@@ -107,7 +106,7 @@ config dns_servers
 	option interface 'Disable'
 	option node_resolve '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option type 'udp'
@@ -117,18 +116,19 @@ config dns_servers
 	option interface 'Disable'
 	option node_resolve '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
+
 config dns_servers
 	option type 'udp'
 	option ip '114.114.114.114'
-	option enabled '1'
 	option group 'default'
+	option enabled '1'
 
 config dns_servers
 	option type 'udp'
 	option ip '119.29.29.29'
-	option enabled '1'
 	option group 'default'
+	option enabled '1'
 
 config dns_servers
 	option group 'nameserver'
@@ -139,8 +139,8 @@ config dns_servers
 config dns_servers
 	option type 'udp'
 	option ip '223.5.5.5'
-	option enabled '1'
 	option group 'default'
+	option enabled '1'
 
 config dns_servers
 	option group 'nameserver'
@@ -164,13 +164,13 @@ config dns_servers
 	option type 'https'
 	option ip 'doh.pub/dns-query'
 	option group 'nameserver'
-	option enabled '1'
+	option enabled '0'
 
 config dns_servers
 	option type 'https'
 	option ip 'dns.alidns.com/dns-query'
 	option group 'nameserver'
-	option enabled '1'
+	option enabled '0'
 
 config dns_servers
 	option group 'fallback'
@@ -239,10 +239,10 @@ config dns_servers
 	option type 'tls'
 
 config dns_servers
-	option enabled '0'
 	option group 'fallback'
 	option ip '1.1.1.1'
 	option type 'tls'
+	option enabled '1'
 
 config dns_servers
 	option enabled '0'
@@ -355,5 +355,5 @@ config config_subscribe
 	option node_type 'true'
 	option rule_provider 'true'
 	list ex_keyword '机场|距离|0.1|0.01|0.2|0.3|0.4|0.5|重置|到期|剩余|每月|刷新|网站|官网|时间|套餐'
-	option custom_template_url 'https://ghp.ci/https://raw.githubusercontent.com/zimoadmin/rule/main/user.ini'
+	option custom_template_url 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/zimoadmin/rule/main/user.ini'
 
