@@ -356,7 +356,7 @@ config config_subscribe
 	option enabled '1'
 	option sub_ua 'clash.meta'
 	option sub_convert '1'
-	option convert_address 'https://url.v1.mk/sub'
+	option convert_address 'https://SUBAPI.fxxk.dedyn.io/sub'
 	option template '0'
 	option custom_template_url 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/zimoadmin/rule/main/user.ini'
 	option emoji 'true'
