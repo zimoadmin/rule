@@ -350,7 +350,7 @@ config config_subscribe
 	option sub_convert '1'
 	option convert_address 'https://url.v1.mk/sub'
 	option template '0'
-	option custom_template_url '【修改成自己的订阅链接】'
+	option custom_template_url 'https://raw.githubusercontent.com/zimoadmin/rule/refs/heads/main/user.ini'
 	option emoji 'true'
 	option udp 'true'
 	option skip_cert_verify 'true'
@@ -358,5 +358,5 @@ config config_subscribe
 	option node_type 'false'
 	option rule_provider 'false'
 	list ex_keyword '机场|距离|0.1|0.01|0.2|0.3|0.4|0.5|重置|到期|剩余|每月|刷新|网站|官网|时间|套餐'
-	option address 'https://cf-workers-sub-ag3.pages.dev/zimo?b64'
+	option address '【修改成自己的订阅链接】'
 
