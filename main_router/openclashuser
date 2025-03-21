@@ -350,7 +350,7 @@ config config_subscribe
 	option sub_convert '1'
 	option convert_address 'https://url.v1.mk/sub'
 	option template '0'
-	option custom_template_url 'https://raw.githubusercontent.com/zimoadmin/rule/main/user.ini'
+	option custom_template_url 'https://raw.githubusercontent.com/zimoadmin/rule/refs/heads/main/user.ini?token=GHSAT0AAAAAADAYVD4G7BFL5Z4PKVQGIMYWZ65IF3A'
 	option emoji 'true'
 	option udp 'true'
 	option skip_cert_verify 'true'
