@@ -342,7 +342,7 @@ config authentication
 
 config config_subscribe
 	option enabled '1'
-	option address 'https://cf-workers-sub-ag3.pages.dev/zimo?b64'
+	option address '【订阅地址复制到这里覆盖】'
 	option sub_ua 'clash.meta'
 	option sub_convert '1'
 	option convert_address 'https://url.v1.mk/sub'
