@@ -354,5 +354,5 @@ config config_subscribe
 	option node_type 'false'
 	option rule_provider 'false'
 	list ex_keyword '机场|距离|0.1|0.01|0.2|0.3|0.4|0.5|重置|到期|剩余|每月|刷新|网站|官网|时间|套餐'
-	option address 'https://cf-workers-sub-ag3.pages.dev/zimo?b64'
-
+	option address '【订阅地址复制到这里覆盖】'
+       
