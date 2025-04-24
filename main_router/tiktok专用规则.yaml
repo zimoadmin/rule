@@ -1,0 +1,405 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+allow-lan: false
+mode: Rule
+log-level: info
+ipv6: false
+hosts:
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  default-nameserver:
+    - 119.28.28.28
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - 119.28.28.28
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+  fallback:
+    - https://dns.pub/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.apad.pro/dns-query
+    - https://dns.alidns.com/dns-query
+    - tls://dns.pub:853
+    - tls://dot.pub:853
+    - tls://dns.alidns.com:853
+    - 119.28.28.28
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 0.0.0.0/8
+      - 10.0.0.0/8
+      - 100.64.0.0/10
+      - 127.0.0.0/8
+      - 169.254.0.0/16
+      - 172.16.0.0/12
+      - 192.0.0.0/24
+      - 192.0.2.0/24
+      - 192.88.99.0/24
+      - 192.168.0.0/16
+      - 198.18.0.0/15
+      - 198.51.100.0/24
+      - 203.0.113.0/24
+      - 224.0.0.0/4
+      - 233.252.0.0/24
+      - 240.0.0.0/4
+      - 255.255.255.255/32
+      - ::/128
+      - ::1/128
+      - fc00::/7
+      - fe80::/10
+      - ff00::/8
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.localdomain'
+    - '*.example'
+    - '*.invalid'
+    - '*.localhost'
+    - '*.test'
+    - '*.local'
+    - '*.home.arpa'
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - stun.*.*
+    - stun.*.*.*
+    - swscan.apple.com
+    - mesu.apple.com
+    - music.163.com
+    - '*.music.163.com'
+    - '*.126.net'
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - '*.kuwo.cn'
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - y.qq.com
+    - '*.y.qq.com'
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - localhost.ptlogin2.qq.com
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    - '*.xiami.com'
+    - '*.music.migu.cn'
+    - music.migu.cn
+    - +.wotgame.cn
+    - +.wggames.cn
+    - +.wowsgame.cn
+    - +.wargaming.net
+    - '*.*.*.srv.nintendo.net'
+    - '*.*.stun.playstation.net'
+    - xbox.*.*.microsoft.com
+    - '*.*.xboxlive.com'
+    - '*.ipv6.microsoft.com'
+    - teredo.*.*.*
+    - teredo.*.*
+    - speedtest.cros.wr.pvp.net
+    - +.jjvip8.com
+    - www.douyu.com
+    - activityapi.huya.com
+    - activityapi.huya.com.w.cdngslb.com
+    - www.bilibili.com
+    - api.bilibili.com
+    - a.w.bilicdn1.com
+external-controller: 127.0.0.1:9090
+clash-for-android:
+  append-system-dns: false
+profile:
+  tracing: true
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  force-dns-mapping: true
+  sniff:
+    TLS: {ports: [0-65535], override-destination: true}
+    HTTP: {ports: [0-65535], override-destination: true}
+    QUIC: {ports: [0-65535], override-destination: true}
+    ###添加节点部分
+proxies:
+ - name: 中转
+   type: ss
+   server: 183.94.30.165
+   port: 29435
+   cipher: aes-128-gcm
+   password: c05250f88f3e82de
+   udp: true   
+ - name: us1
+   type: socks5
+   server: 192.190.144.119
+   port: 62001
+   username: ft207126
+   password: do023198
+   udp: true
+   dialer-proxy: 中转
+ - name: us2
+   type: socks5
+   server: 192.190.144.201
+   port: 62001
+   username: ki102856
+   password: ww134978  
+   udp: true
+   dialer-proxy: 中转   
+ - name: us3
+   type: socks5
+   server: 192.190.144.202
+   port: 62001
+   username: zi615613
+   password: nl151623  
+   udp: true
+   dialer-proxy: 中转
+ - name: us4
+   type: socks5
+   server: 192.190.144.169
+   port: 62001
+   username: fn847194
+   password: au184279  
+   udp: true
+   dialer-proxy: 中转
+ - name: us5
+   type: socks5
+   server: 192.190.144.175
+   port: 62001
+   username: uh637687
+   password: xq969482  
+   udp: true 
+   dialer-proxy: 中转
+ - name: us6
+   type: socks5
+   server: 192.190.144.176
+   port: 62001
+   username: zp814717
+   password: bj244415  
+   udp: true 
+   dialer-proxy: 中转
+ - name: us7
+   type: socks5
+   server: 192.190.144.177
+   port: 62001
+   username: ei301482
+   password: kt187297  
+   udp: true
+   dialer-proxy: 中转 
+ - name: us8
+   type: socks5
+   server: 69.91.149.23
+   port: 11398
+   username: nZUZB2W1iK
+   password: XoR70iUNZf 
+   udp: true
+   dialer-proxy: 中转
+ - name: us9
+   type: socks5
+   server: 69.91.153.2
+   port: 6532
+   username: nZUZB2W1iK
+   password: XoR70iUNZf
+   udp: true
+   dialer-proxy: 中转
+ - name: us10
+   type: socks5
+   server: 69.91.185.159
+   port: 8729
+   username: nZUZB2W1iK
+   password: XoR70iUNZf 
+   udp: true
+   dialer-proxy: 中转
+ - name: us11
+   type: socks5
+   server: 69.91.185.207
+   port: 8777
+   username: nZUZB2W1iK
+   password: XoR70iUNZf 
+   udp: true
+   dialer-proxy: 中转
+ - name: us12
+   type: socks5
+   server: 69.91.145.83
+   port: 11203
+   username: nZUZB2W1iK
+   password: XoR70iUNZf 
+   udp: true
+   dialer-proxy: 中转
+ - name: us13
+   type: socks5
+   server: 165.140.193.149
+   port: 62001
+   username: dw194181
+   password: gs569285
+   udp: true
+   dialer-proxy: 中转
+ - name: us14
+   type: socks5
+   server: 165.140.193.150
+   port: 62001
+   username: ly898888
+   password: vi803359 
+   udp: true
+   dialer-proxy: 中转
+ - name: us15
+   type: socks5
+   server: 165.140.193.151
+   port: 62001
+   username: rl936799
+   password: ws728874
+   udp: true
+   dialer-proxy: 中转
+ - name: us16
+   type: socks5
+   server: 165.140.192.127
+   port: 62001
+   username: vr872589
+   password: jx269737
+   udp: true
+   dialer-proxy: 中转
+ - name: us17
+   type: socks5
+   server: 165.140.192.133
+   port: 62001
+   username: oi588065
+   password: jo971628 
+   udp: true
+   dialer-proxy: 中转
+ - name: us18
+   type: socks5
+   server: 165.140.192.29
+   port: 62001
+   username: po159353
+   password: mg475102 
+   udp: true
+   dialer-proxy: 中转
+ - name: us19
+   type: socks5
+   server: 165.140.192.187
+   port: 62001
+   username: xb280348
+   password: eo732061
+   udp: true
+   dialer-proxy: 中转
+ - name: us20
+   type: socks5
+   server: 165.140.192.189
+   port: 62001
+   username: xd209751
+   password: vt707746
+   udp: true
+   dialer-proxy: 中转
+   
+
+
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 中转
+      
+      
+    #添加手机IP  
+rules:
+  - SRC-IP-CIDR,192.168.31.118/32,us1
+  - SRC-IP-CIDR,192.168.31.103/32,us1
+  - SRC-IP-CIDR,192.168.31.129/32,us1
+  - SRC-IP-CIDR,192.168.31.210/32,us2
+  - SRC-IP-CIDR,192.168.31.127/32,us2
+  - SRC-IP-CIDR,192.168.31.100/32,us2
+  - SRC-IP-CIDR,192.168.31.215/32,us3
+  - SRC-IP-CIDR,192.168.31.135/32,us3
+  - SRC-IP-CIDR,192.168.31.104/32,us3
+  - SRC-IP-CIDR,192.168.31.189/32,us4
+  - SRC-IP-CIDR,192.168.31.186/32,us4
+  - SRC-IP-CIDR,192.168.31.105/32,us4
+  - SRC-IP-CIDR,192.168.31.231/32,us5
+  - SRC-IP-CIDR,192.168.31.101/32,us5
+  - SRC-IP-CIDR,192.168.31.249/32,us5
+  - SRC-IP-CIDR,192.168.31.117/32,us6
+  - SRC-IP-CIDR,192.168.31.147/32,us6
+  - SRC-IP-CIDR,192.168.31.223/32,us6
+  - SRC-IP-CIDR,192.168.31.155/32,us7
+  - SRC-IP-CIDR,192.168.31.133/32,us7
+  - SRC-IP-CIDR,192.168.31.201/32,us7
+  - SRC-IP-CIDR,192.168.31.170/32,us8
+  - SRC-IP-CIDR,192.168.31.164/32,us8
+  - SRC-IP-CIDR,192.168.31.156/32,us8
+  - SRC-IP-CIDR,192.168.31.166/32,us9
+  - SRC-IP-CIDR,192.168.31.224/32,us9
+  - SRC-IP-CIDR,192.168.31.247/32,us9
+  - SRC-IP-CIDR,192.168.31.125/32,us10
+  - SRC-IP-CIDR,192.168.31.179/32,us10
+  - SRC-IP-CIDR,192.168.31.244/32,us10
+  - SRC-IP-CIDR,192.168.31.214/32,us11
+  - SRC-IP-CIDR,192.168.31.245/32,us11
+  - SRC-IP-CIDR,192.168.31.188/32,us11
+  - SRC-IP-CIDR,192.168.31.221/32,us12
+  - SRC-IP-CIDR,192.168.31.237/32,us12
+  - SRC-IP-CIDR,192.168.31.121/32,us12
+  - SRC-IP-CIDR,192.168.31.143/32,us13
+  - SRC-IP-CIDR,192.168.31.236/32,us13
+  - SRC-IP-CIDR,192.168.31.239/32,us13
+  - SRC-IP-CIDR,192.168.31.238/32,us14
+  - SRC-IP-CIDR,192.168.31.181/32,us14
+  - SRC-IP-CIDR,192.168.31.132/32,us14
+  - SRC-IP-CIDR,192.168.31.122/32,us15
+  - SRC-IP-CIDR,192.168.31.175/32,us15
+  - SRC-IP-CIDR,192.168.31.139/32,us15
+  - SRC-IP-CIDR,192.168.31.162/32,us16
+  - SRC-IP-CIDR,192.168.31.109/32,us16
+  - SRC-IP-CIDR,192.168.31.178/32,us16
+  - SRC-IP-CIDR,192.168.31.248/32,us17
+  - SRC-IP-CIDR,192.168.31.246/32,us17
+  - SRC-IP-CIDR,192.168.31.124/32,us17
+  - SRC-IP-CIDR,192.168.31.220/32,us18
+  - SRC-IP-CIDR,192.168.31.165/32,us18
+  - SRC-IP-CIDR,192.168.31.194/32,us18
+  - SRC-IP-CIDR,192.168.31.136/32,us19
+  - SRC-IP-CIDR,192.168.31.120/32,us19
+  - SRC-IP-CIDR,192.168.31.233/32,us19
+  - SRC-IP-CIDR,192.168.31.199/32,us20
+  - SRC-IP-CIDR,192.168.31.230/32,us20
+  - SRC-IP-CIDR,192.168.31.115/32,us20
+  - SRC-IP-CIDR,192.168.31.209/32,us18
+  - SRC-IP-CIDR,192.168.31.154/32,us19
+  - SRC-IP-CIDR,192.168.31.167/32,us20
+  
+  
+  
+  
+  - MATCH,节点选择
