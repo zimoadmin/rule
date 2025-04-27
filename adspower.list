@@ -3,7 +3,7 @@ DOMAIN-SUFFIX,app.adspower.com
 DOMAIN-SUFFIX,version.adspower.net
 DOMAIN-SUFFIX,msg.salesmartly.com
 DOMAIN-SUFFIX,sys.adspower.net
-DOMAIN-KEYWORD,,app.adspower.com
-DOMAIN-KEYWORD,,version.adspower.net
-DOMAIN-KEYWORD,,msg.salesmartly.com
-DOMAIN-KEYWORD,,sys.adspower.net
+DOMAIN-KEYWORD,app.adspower.com
+DOMAIN-KEYWORD,version.adspower.net
+DOMAIN-KEYWORD,msg.salesmartly.com
+DOMAIN-KEYWORD,sys.adspower.net
