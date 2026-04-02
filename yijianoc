@@ -1,0 +1,52 @@
+#!/bin/sh
+
+set -e
+
+echo "=============================="
+echo " OpenClash 安装脚本（带密码设置）"
+echo "=============================="
+
+# 1. 检查系统
+if ! grep -qi openwrt /etc/os-release 2>/dev/null; then
+    echo "❌ 当前系统不是 OpenWrt，退出"
+    exit 1
+fi
+
+# 2. 设置密码
+echo "🔐 设置 root 密码"
+12345
+
+# 3. 更新软件源
+echo "📦 更新 opkg..."
+opkg update
+
+# 4. 安装依赖
+echo "📦 安装依赖..."
+opkg install luci-compat curl ca-certificates wget
+
+# 5. 下载 OpenClash
+cd /tmp
+echo "🌐 获取 OpenClash 最新版本..."
+LATEST_URL=$(wget -qO- https://api.github.com/repos/vernesong/OpenClash/releases/latest \
+    | grep browser_download_url \
+    | grep luci-app-openclash \
+    | cut -d '"' -f 4)
+
+if [ -z "$LATEST_URL" ]; then
+    echo "❌ 获取下载地址失败"
+    exit 1
+fi
+
+echo "⬇️ 下载 OpenClash..."
+wget -O openclash.ipk "$LATEST_URL"
+
+# 6. 安装
+echo "📥 安装 OpenClash..."
+opkg install openclash.ipk
+
+# 7. 清理
+rm -f openclash.ipk
+
+echo "=============================="
+echo "✅ 安装完成！"
+echo "=============================="
