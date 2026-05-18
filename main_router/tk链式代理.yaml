@@ -1,0 +1,201 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+allow-lan: false
+mode: Rule
+log-level: info
+ipv6: false
+hosts:
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  default-nameserver:
+    - 119.28.28.28
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - 119.28.28.28
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+  fallback:
+    - https://dns.pub/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.apad.pro/dns-query
+    - https://dns.alidns.com/dns-query
+    - tls://dns.pub:853
+    - tls://dot.pub:853
+    - tls://dns.alidns.com:853
+    - 119.28.28.28
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+external-controller: 127.0.0.1:9090
+clash-for-android:
+  append-system-dns: false
+profile:
+  tracing: true
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  force-dns-mapping: true
+  sniff-tls: true
+  sniff-http: true
+  sniff:
+    TLS: {ports: [0-65535], override-destination: true}
+    HTTP: {ports: [0-65535], override-destination: true}
+    QUIC: {ports: [0-65535], override-destination: true}
+    ###添加节点部分
+proxies:
+ - name: yn
+   type: socks5
+   server: 157.20.88.185
+   port: 45001
+   username: udC6a02b17ac5490
+   password: MYxzKpsrBXyqmDGZEo
+   udp: true
+   dialer-proxy: 中转选择  
+ - {"name":"B1001 官网:rabbitpro.sg","type":"vmess","server":"30.rabbitpro-in-2.com","port":27101,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1002 香港","type":"vmess","server":"30.rabbitpro-in-2.com","port":27102,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1003 香港","type":"vmess","server":"30.rabbitpro-in-2.com","port":27103,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1004 香港","type":"vmess","server":"30.rabbitpro-in-2.com","port":27104,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1005 香港","type":"vmess","server":"30.rabbitpro-in-2.com","port":27105,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1006 香港","type":"vmess","server":"30.rabbitpro-in-2.com","port":27106,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1007 香港家宽","type":"vmess","server":"30.rabbitpro-in-2.com","port":27107,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇭🇰 B1008 香港家宽","type":"vmess","server":"30.rabbitpro-in-2.com","port":27108,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇸🇬 B1009 新加坡","type":"vmess","server":"30.rabbitpro-in-2.com","port":27109,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇸🇬 B1010 新加坡","type":"vmess","server":"30.rabbitpro-in-2.com","port":27110,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇸🇬 B1011 新加坡","type":"vmess","server":"30.rabbitpro-in-2.com","port":27111,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇸🇬 B1012 新加坡","type":"vmess","server":"30.rabbitpro-in-2.com","port":27112,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇺🇸 B1013 美国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27113,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇺🇸 B1014 美国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27114,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇺🇸 B1015 美国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27115,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇺🇸 B1016 美国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27116,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇨🇳 B1017 台湾","type":"vmess","server":"30.rabbitpro-in-2.com","port":27117,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇨🇳 B1018 台湾","type":"vmess","server":"30.rabbitpro-in-2.com","port":27118,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇨🇳 B1019 台湾家宽","type":"vmess","server":"30.rabbitpro-in-2.com","port":27119,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇨🇳 B1020 台湾家宽","type":"vmess","server":"30.rabbitpro-in-2.com","port":27120,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇯🇵 B1021 日本","type":"vmess","server":"30.rabbitpro-in-2.com","port":27121,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇯🇵 B1022 日本","type":"vmess","server":"30.rabbitpro-in-2.com","port":27122,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇯🇵 B1023 日本","type":"vmess","server":"30.rabbitpro-in-2.com","port":27123,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇯🇵 B1024 日本","type":"vmess","server":"30.rabbitpro-in-2.com","port":27124,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇲🇾 B1025 马来西亚","type":"vmess","server":"30.rabbitpro-in-2.com","port":27125,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":2,"cipher":"auto","udp":true}
+ - {"name":"🇲🇾 B1026 马来西亚","type":"vmess","server":"30.rabbitpro-in-2.com","port":27126,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":2,"cipher":"auto","udp":true}
+ - {"name":"🇰🇷 B1027 韩国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27127,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇨🇦 B1028 加拿大","type":"vmess","server":"30.rabbitpro-in-2.com","port":27128,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇹🇭 B1029 泰国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27129,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇦🇺 B1030 澳大利亚","type":"vmess","server":"30.rabbitpro-in-2.com","port":27130,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇩🇪 B1031 德国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27131,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇬🇧 B1032 英国","type":"vmess","server":"30.rabbitpro-in-2.com","port":27132,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇮🇳 B1033 印度","type":"vmess","server":"30.rabbitpro-in-2.com","port":27133,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇹🇷 B1034 土耳其","type":"vmess","server":"30.rabbitpro-in-2.com","port":27134,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇦🇷 B1035 阿根廷","type":"vmess","server":"30.rabbitpro-in-2.com","port":27135,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇵🇭 B1036 菲律宾","type":"vmess","server":"30.rabbitpro-in-2.com","port":27136,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇻🇳 B1037 越南","type":"vmess","server":"30.rabbitpro-in-2.com","port":27137,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ - {"name":"🇮🇩 B38 印尼","type":"vmess","server":"30.rabbitpro-in-2.com","port":27035,"uuid":"6ad97a08-3bb1-38c2-83f9-ce86cafea7b6","alterId":0,"cipher":"auto","udp":true}
+ 
+proxy-groups:
+  - name: 中转选择
+    type: select
+    proxies:
+      - 自动选择
+      - 手动选择
+  - name: 链式代理
+    proxies:
+      - DIRECT
+      - yn
+      - 自动选择
+      - 手动选择
+    type: select
+  - name: 手动选择
+    type: select
+    proxies:
+      - 'B1001 官网:rabbitpro.sg'
+      - '🇭🇰 B1002 香港'
+      - '🇭🇰 B1003 香港'
+      - '🇭🇰 B1004 香港'
+      - '🇭🇰 B1005 香港'
+      - '🇭🇰 B1006 香港'
+      - '🇭🇰 B1007 香港家宽'
+      - '🇭🇰 B1008 香港家宽'
+      - '🇸🇬 B1009 新加坡'
+      - '🇸🇬 B1010 新加坡'
+      - '🇸🇬 B1011 新加坡'
+      - '🇸🇬 B1012 新加坡'
+      - '🇺🇸 B1013 美国'
+      - '🇺🇸 B1014 美国'
+      - '🇺🇸 B1015 美国'
+      - '🇺🇸 B1016 美国'
+      - '🇨🇳 B1017 台湾'
+      - '🇨🇳 B1018 台湾'
+      - '🇨🇳 B1019 台湾家宽'
+      - '🇨🇳 B1020 台湾家宽'
+      - '🇯🇵 B1021 日本'
+      - '🇯🇵 B1022 日本'
+      - '🇯🇵 B1023 日本'
+      - '🇯🇵 B1024 日本'
+      - '🇲🇾 B1025 马来西亚'
+      - '🇲🇾 B1026 马来西亚'
+      - '🇰🇷 B1027 韩国'
+      - '🇨🇦 B1028 加拿大'
+      - '🇹🇭 B1029 泰国'
+      - '🇦🇺 B1030 澳大利亚'
+      - '🇩🇪 B1031 德国'
+      - '🇬🇧 B1032 英国'
+      - '🇮🇳 B1033 印度'
+      - '🇹🇷 B1034 土耳其'
+      - '🇦🇷 B1035 阿根廷'
+      - '🇵🇭 B1036 菲律宾'
+      - '🇻🇳 B1037 越南'
+      - '🇮🇩 B38 印尼'
+  - name: 自动选择
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    proxies:
+      - 'B1001 官网:rabbitpro.sg'
+      - '🇭🇰 B1002 香港'
+      - '🇭🇰 B1003 香港'
+      - '🇭🇰 B1004 香港'
+      - '🇭🇰 B1005 香港'
+      - '🇭🇰 B1006 香港'
+      - '🇭🇰 B1007 香港家宽'
+      - '🇭🇰 B1008 香港家宽'
+      - '🇸🇬 B1009 新加坡'
+      - '🇸🇬 B1010 新加坡'
+      - '🇸🇬 B1011 新加坡'
+      - '🇸🇬 B1012 新加坡'
+      - '🇺🇸 B1013 美国'
+      - '🇺🇸 B1014 美国'
+      - '🇺🇸 B1015 美国'
+      - '🇺🇸 B1016 美国'
+      - '🇨🇳 B1017 台湾'
+      - '🇨🇳 B1018 台湾'
+      - '🇨🇳 B1019 台湾家宽'
+      - '🇨🇳 B1020 台湾家宽'
+      - '🇯🇵 B1021 日本'
+      - '🇯🇵 B1022 日本'
+      - '🇯🇵 B1023 日本'
+      - '🇯🇵 B1024 日本'
+      - '🇲🇾 B1025 马来西亚'
+      - '🇲🇾 B1026 马来西亚'
+      - '🇰🇷 B1027 韩国'
+      - '🇨🇦 B1028 加拿大'
+      - '🇹🇭 B1029 泰国'
+      - '🇦🇺 B1030 澳大利亚'
+      - '🇩🇪 B1031 德国'
+      - '🇬🇧 B1032 英国'
+      - '🇮🇳 B1033 印度'
+      - '🇹🇷 B1034 土耳其'
+      - '🇦🇷 B1035 阿根廷'
+      - '🇵🇭 B1036 菲律宾'
+      - '🇻🇳 B1037 越南'
+      - '🇮🇩 B38 印尼' 
+
+    #添加手机IP  
+rules:
+  - MATCH,链式代理
