@@ -14,3 +14,14 @@ DOMAIN-KEYWORD,googleapis
 
 # 国外DNS
 
+;================ Google 固定出口 =================
+
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,google-analytics.com
+
+;==================================================
