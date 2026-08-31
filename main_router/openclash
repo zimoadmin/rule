@@ -119,14 +119,15 @@ config openclash 'config'
 	option ipv6_dns '1'
 	option china_ip6_route '1'
 	option enable_rule_proxy '0'
-	option enable '1'
 	option append_wan_dns '0'
 	option append_default_dns '0'
 	option proxy_mode 'rule'
 	option china_ip_route '1'
 	option delay_start '10'
-	option enable_custom_dns '1'
 	option disable_udp_quic '1'
+	option smart_tolerance '0'
+	option enable '1'
+	option enable_custom_dns '1'
 
 config dns_servers
 	option type 'udp'
@@ -172,14 +173,14 @@ config dns_servers
 	option type 'udp'
 	option disable_ipv6 '0'
 	option ip '114.114.114.114'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'nameserver'
 	option type 'udp'
 	option ip '223.5.5.5'
 	option disable_ipv6 '0'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'fallback'
@@ -202,14 +203,14 @@ config dns_servers
 	option ip '8.8.8.8'
 	option disable_ipv6 '0'
 	option type 'tls'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'fallback'
 	option ip '8.8.4.4'
 	option type 'udp'
 	option disable_ipv6 '0'
-	option enabled '0'
+	option enabled '1'
 
 config authentication
 	option enabled '1'
@@ -237,7 +238,7 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'nameserver'
@@ -249,7 +250,7 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'nameserver'
@@ -261,7 +262,7 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option type 'udp'
@@ -273,7 +274,7 @@ config dns_servers
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
 	option group 'fallback'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option type 'udp'
@@ -285,7 +286,7 @@ config dns_servers
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
 	option group 'fallback'
-	option enabled '0'
+	option enabled '1'
 
 config config_subscribe
 	option enabled '1'
@@ -374,7 +375,7 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'fallback'
@@ -387,7 +388,7 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'fallback'
@@ -402,7 +403,7 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
 config dns_servers
 	option group 'fallback'
@@ -417,5 +418,5 @@ config dns_servers
 	option disable_ipv4 '0'
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
-	option enabled '0'
+	option enabled '1'
 
