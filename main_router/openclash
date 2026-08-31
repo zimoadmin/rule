@@ -298,7 +298,7 @@ config config_subscribe
 	option sort 'true'
 	option node_type 'false'
 	option template '0'
-	option custom_template_url 'https://raw.githubusercontent.com/zimoadmin/rule/refs/heads/main/user.ini'
+	option custom_template_url 'https://raw.githubusercontent.com/zimoadmin/rule/main/user.ini'
 	option rule_provider 'true'
 	list ex_keyword ' 机场|距离|重置|到期|剩余|每月|刷新|网站|时间|套餐|过期时间|剩余流量|QQ群|官网|防失联地址|回国|机场|天|到期|客户'
 	option convert_address 'https://api.asailor.org/sub'
