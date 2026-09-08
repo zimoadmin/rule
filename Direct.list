@@ -10,7 +10,6 @@ DOMAIN-SUFFIX,www.paytr.com
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,googleapis.cn
 DOMAIN-SUFFIX,services.googleapis.cn
-DOMAIN-SUFFIX,misub
 DOMAIN-SUFFIX,dns.alidns.com
 DOMAIN-SUFFIX,doh.pub
 
@@ -24,6 +23,8 @@ DOMAIN-KEYWORD,url.v1.mk
 DOMAIN-KEYWORD,tencentmusic
 
 # Direct.list
+
+DOMAIN,misub.12334123.xyz
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
